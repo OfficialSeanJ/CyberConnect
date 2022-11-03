@@ -1,0 +1,37 @@
+Most people on average are tired of registering and re-declaring their friend relationships on every site. It gets redundant overtime. This is especially true in web3 where each user's identity is already portable across sites.
+
+With a decentralized social graph owned by the users instead of centralized platforms, each user is able to leave an app and join a new one without losing friends or having to migrate everybody. This could be the main focus for all new social applications creating and curating the best content and forget about rebuilding the wheels of a social graph database.
+
+CyberConnect is a decentralized social graph protocol built with IPFS and Ceramic. CyberConnect gateway provides a universal data layer for DApps to start plugging in the social element for their users. With CyberConnect, a user's connection data in every application is aggregated together, allowing the social graph to be portable across Web3.
+
+CyberConnect API:
+
+The CyberConnect API consists of Read path and Write path.
+The read path is a GraphQL-based API that allows anybody to query and interact with the current and aggregated connection data of an Ethereum address.
+
+The write path is a JavaScript library that allows users to control their decentralized identity(DIDs) and social graph data by signing a message in MetaMask. The data will be stored on IPFS eventually through Ceramic Network.
+
+How To Integrate CyberConnect
+CyberConnect provides three major functions: follow button, retrieving following & followers lists, and getting recommended following lists. Currently, supporting Ethereum addresses.
+
+Following & Followers List
+You can retrieve an address's following & followers list on CyberConnect through a simple API call.
+
+Recommended Following List
+You can also get a recommended people-to-follow list for any address through a simple API call.
+
+Connect & Disconnect
+CyberConnect provides a JavaScript library that encapsulates the complex authentication logic (authenticate to Ceramic Network) into easy-to-use connect & disconnect functions.
+
+Follow Button
+CyberConnect provides a standardized CyberConnect Follow Button which can be implemented in any Web3 application with simple lines of front-end codes.
+
+User Flow
+In general, there are two steps needed from users to write connection data.
+
+1. Initialize action
+The user starts by clicking the follow/unfollow button in the website, it should invoke connect function in the JavaScript library.
+
+2. Sign MetaMask message
+This step is needed only when its user's first action is in the current session. The user doesn't need to sign the MetaMask message again for the following actions. 
+After the user signed the first message, the library will generate a derived signing key stored in the memory for future safe interaction with Ceramic Network.
